@@ -1,0 +1,51 @@
+/* 菜单栏 */
+$menu-bgColor: #5399b1;
+.el-menu,
+.el-menu--collapse {
+  .el-submenu__title,
+  .el-menu-item {
+    display: flex;
+    align-items: center;
+    > span {
+      color: #fff;
+    }
+    > i {
+      color: #fff;
+    }
+    svg {
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+    }
+    &.is-active {
+      background-color: $menu-bgColor !important;
+      > span {
+        color: #52fefd;
+      }
+    }
+  }
+  .el-menu-item:hover,
+  .el-submenu__title:hover {
+    background-color: $menu-bgColor !important;
+  }
+}
+
+// 折叠起来后，隐藏文字 与 >
+.el-menu--collapse {
+  .el-submenu__title span {
+    display: none;
+  }
+  .el-submenu__title .el-submenu__icon-arrow {
+    display: none;
+  }
+}
+
+.el-menu--vertical {
+  display: block;
+  .el-menu {
+    background-color: $color !important;
+    li:hover {
+      background-color: $menu-bgColor !important;
+    }
+  }
+}

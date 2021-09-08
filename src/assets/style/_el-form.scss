@@ -1,0 +1,42 @@
+/*
+  修改el-form表单样式
+*/
+.el-form {
+  .el-row {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    .el-form-item {
+      display: flex;
+      .el-form-item__label {
+        color: #666;
+        word-break: break-all;
+        padding-right: 10px;
+      }
+      .el-form-item__content {
+        flex: 1;
+        > .el-input,
+        > .el-textarea,
+        > .el-select,
+        > .el-date-editor,
+        > .el-cascader {
+          width: 100%;
+          .el-input__inner,
+          .el-textarea__inner {
+            border: 0;
+            font-size: 14px;
+          }
+        }
+        > .el-date-editor--monthrange,
+        > .el-date-editor--daterange,
+        > .el-date-editor--datetimerange,
+        > .el-date-editor--timerange {
+          background-color: #fff;
+        }
+      }
+    }
+    .el-form-item--medium {
+      margin-bottom: 22px;
+    }
+  }
+}

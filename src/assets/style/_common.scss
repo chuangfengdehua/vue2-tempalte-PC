@@ -1,0 +1,55 @@
+$color: var(--color, #2f84a6);
+$color1: #333;
+$color2: #666;
+$color3: #999;
+$color4: #3f3f3f;
+$border: var(--border, #5aa3c2);
+$bgColor: var(--bgColor, #f2f6fa);
+
+/**********************************************
+ * @description 混合宏
+ * @define       @mixin name($param){}
+ * @callback     @include name(param, param)
+ * 注意点: 混合宏的传参得严格按照 形参的顺序传值
+ */
+@charset "UTF-8";
+
+/*
+  * flex布局
+  *     $direction      方向默认水平 row=水平 column=垂直
+  *     $alignItems     根据方向 来决定 横轴 或 竖轴的位置 option: flex-start center flex-end
+  *     $justifyContent 根据方向 来决定 横轴 或 竖轴的位置 option: flex-start center flex-end
+  */
+@mixin flex($alignItems: initial, $justifyContent: initial, $direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $alignItems;
+  justify-content: $justifyContent;
+}
+
+/*
+  * 设置背景
+  *     $url        图片地址
+  *     $width      背景占容器的宽度 默认100%
+  *     $height     背景占容器的高度 默认100%
+  *     $color      背景颜色 默认为 ''
+  */
+@mixin bg($url, $width: 100%, $height: 100%, $color: transparent) {
+  background: $color url($url) no-repeat center;
+  background-size: $width $height;
+}
+
+// 文字溢出隐藏
+@mixin oflow() {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// 文字溢出隐藏（多行文字）
+@mixin oflowMore($num: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $num; //第几行换行
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
